@@ -10,17 +10,14 @@ import { useScrollIndicator } from 'react-use-scroll-indicator';
 function Timeline() {
 
   const [state] = useScrollIndicator({ onElement: true, initialValue: 100});
-  const [transition, setTransition] = React.useState(false)
-  //console.log(state.value)
+  const [transition, setTransition] = React.useState(false);
 
   React.useEffect(() => {
-
     window.addEventListener('scroll', () => {
       if((window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 5)) {
         setTransition(true);
-        //console.log("transition in if else",transition);
       } else {
-        setTransition(false)
+        setTransition(false);
       }
     })
   }, []);
